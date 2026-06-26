@@ -11,23 +11,23 @@ const pageNumber = document.getElementById("pageNumber");
 let currentPage = 1;
 let currentSearch = "";
 
-searchBtn.addEventListener("click", () => {
-    currentSearch = searchInput.value;
-         currentPage = 1;
 
-    getMovies();
-});
 
 async function getMovies() {
+    if (currentSearch=="")return
 
     let response = await fetch(
         `https://www.omdbapi.com/?apikey=${API_KEY}&s=${currentSearch}&page=${currentPage}`
     );
-
-    let data = await response.json();
+      let data = await response.json();
          movies.innerHTML = "";
-         data.Search.forEach(movie => {
+        
+    if (data.Response=="False"){
+        movies.innerHTML="<h2>no movies found</h2>";
+    }
 
+  
+ data.Search.forEach(movie => {
         movies.innerHTML += `
             <div class="movie-card">
                 <img src="${movie.Poster}" alt="">
@@ -41,6 +41,13 @@ async function getMovies() {
 
     pageNumber.textContent = currentPage;
 }
+
+searchBtn.addEventListener("click", () => {
+    currentSearch = searchInput.value;
+         currentPage = 1;
+
+    getMovies();
+});
 
 nextBtn.addEventListener("click", () => {
        currentPage++;
