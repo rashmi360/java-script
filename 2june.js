@@ -51,17 +51,20 @@
 // myAccount()
 
 
-function createPlayer(playerName) {
-    let score = 0;
+// function createPlayer(playerName) {
+//     let score = 0;
 
-    return function() {
-        score += 10;
-        return playerName + " has " + score + "points"
-    }
-}
+//     return function() {
+//         score += 10;
+//         return playerName + " has " + score + "points"
+//     }
+// }
 
-const player1 = createPlayer("Mario");
-const player2 = createPlayer("Luigi");
-console.log(player1())
-console.log(player1())
-console.log(player2())
+// const player1 = createPlayer("Mario");
+// const player2 = createPlayer("Luigi");
+// console.log(player1())
+// console.log(player1())
+// console.log(player2())
+
+
+

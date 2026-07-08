@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    background: whitesmoke
+
+}
+.container{
+width:700px;
+height: 600px;
+background:linear-gradient(rgb(246, 246, 207), rgb(234, 185, 193));
+display:flex;
+justify-content: flex-start;
+align-items: center;
+margin-left: 30px;
+border-radius: 20px;
+padding: 20px;
+}
+h2{
+    color:#fff;
+    margin-bottom:8px;
+    font-size:1.7rem;
+}
+#userImage{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:20px;
+    background:#fff;
+}

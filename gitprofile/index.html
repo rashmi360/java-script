@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main">GitHub Profile Finder</h1>
+           <div class="search-box">
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter GitHub Username">
+        <button id="searchBtn">
+                Search
+            </button>
+        </div>
+
+        <div id="card" class="profile-card">
+             <div class="left">
+                 <img
+                    id="image"
+                     src=""
+                    alt="Profile Image">
+             <h2 id="name">GitHub User</h2>
+                 <p id="login">@username</p>
+                 <a
+                    id="profileLink"
+                    href="#"
+                    target="_blank"
+                >
+                    View GitHub Profile
+                </a>
+             </div>
+           <div class="right">
+               <div class="bio-card">
+
+                    <h3>Bio</h3>
+
+                    <p id="bio">
+                        Search any GitHub username to view profile details.
+                    </p>
+
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <h2 id="followers">0</h2>
+                        <span>Followers</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2 id="following">0</h2>
+                        <span>Following</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2 id="repos">0</h2>
+                        <span>Repositories</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="profile.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>To Do List</h2>
+    <input type="text" id="input" placeholder="add new task">
+    <button id="addBtn">Add </button>
+
+    <ul id="list"></ul>
+
+
+<script>
+        const input = document.getElementById("input");
+const addBtn = document.getElementById("addBtn");
+const list = document.getElementById("list");
+
+addBtn.onclick = () => {
+    if (input.value.trim() === "") return;
+
+    const li = document.createElement("li");
+
+    const span = document.createElement("span");
+    span.textContent = input.value;
+
+    const button = document.createElement("button");
+    button.innerText = "X";
+
+    button.onclick = () => {
+        li.remove();
+    };
+
+    const editBtn = document.createElement("button");
+    editBtn.innerText = "Edit";
+
+    editBtn.onclick = () => {
+        const updatedTask = prompt("Edit task", span.textContent);
+     if (updatedTask !== null && updatedTask.trim() !== "") {
+            span.textContent = updatedTask;
+        }
+    };
+
+    li.appendChild(span);
+    li.appendChild(button);
+    li.appendChild(editBtn);
+
+    list.appendChild(li);
+
+    input.value = "";
+};
+  
+
+    </script>
+
+
+
+</body>
+</html>

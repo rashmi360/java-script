@@ -16,13 +16,43 @@ async function getWeather() {
         weather.innerHTML="<h2>city not found</h2>"
         return
     }
-     weather.innerHTML += `
-            <div class="card">
-                <h3>${data.name}</h3>
+    weather.innerHTML = `
+<div class="card">
 
-                
-            </div>
-        `;
+    <h2>${data.name}</h2>
+
+    <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="Weather Icon">
+
+    <h1>${Math.round(data.main.temp)}°C</h1>
+
+    <p class="condition">${data.weather[0].main}</p>
+
+    <div class="weather-grid">
+
+        <div class="box">
+            <span>📅 Day</span>
+            <h4>${new Date().toLocaleDateString("en-US",{weekday:"long"})}</h4>
+        </div>
+
+        <div class="box">
+            <span>💧 Humidity</span>
+            <h4>${data.main.humidity}%</h4>
+        </div>
+
+        <div class="box">
+            <span>🌬 Wind</span>
+            <h4>${data.wind.speed} m/s</h4>
+        </div>
+
+        <div class="box">
+            <span>🥵 Feels Like</span>
+            <h4>${Math.round(data.main.feels_like)}°C</h4>
+        </div>
+
+    </div>
+
+</div>
+`;
 
     
 }
